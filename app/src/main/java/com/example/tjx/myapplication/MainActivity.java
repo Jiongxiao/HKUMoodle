@@ -249,6 +249,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             cteachers.add(teacher_name);
         }
 
+        // Some courses do not list teachers
+        for (int i=0;i<=cname.size()-cteachers.size();i++){
+            cteachers.add("None");
+        }
+
         Intent intent = new Intent(getBaseContext(), CourseListActivity.class);
         intent.putStringArrayListExtra("CourseName", cname);
         intent.putStringArrayListExtra("Teachers", cteachers);

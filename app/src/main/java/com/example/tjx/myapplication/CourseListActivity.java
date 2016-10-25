@@ -22,7 +22,7 @@ public class CourseListActivity extends ListActivity {
         ArrayList<String> courseName= intent.getStringArrayListExtra("CourseName");
         ArrayList<String> teachers = intent.getStringArrayListExtra("Teachers");
 
-        for (int i=0;i<courseName.size();i++){
+        for (int i=0;i<teachers.size();i++){
             Map<String, Object> map = new HashMap<String,Object>();
             map.put("CourseName", courseName.get(i));
             map.put("Teachers",teachers.get(i));

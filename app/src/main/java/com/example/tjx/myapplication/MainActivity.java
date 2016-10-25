@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -57,5 +58,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
             startActivity(intent);
         }
 
+    }
+
+    public String ReadBufferedHTML(BufferedReader reader, char[] htmlBuffer, int bufSz) throws java.io.IOException{
+        htmlBuffer[0]='\0';
+        int offset =0;
+        do {
+            int cnt = reader.read(htmlBuffer,offset,bufSz-offset);  //这是在干嘛?
+            if(cnt>0){
+                offset+=cnt;
+            }else {
+                break;
+            }
+        }while (true);
+            return new String(htmlBuffer);
     }
 }
